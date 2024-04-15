@@ -1,0 +1,50 @@
+{
+  "name": "background-template2",
+  "author": "haoJie",
+  "version": "0.0.1",
+  "private": false,
+  "description": "这是一个后台模板库，导出 mixin 在需要的页面中直接挂载即可",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peihaojie/background-template2.git"
+  },
+  "main": "./dist/back-template.common.js",
+  "module": "./dist/back-template.umd.min.js",
+  "keywords": [
+    "background",
+    "template",
+    "background-template",
+    "system-template",
+    "system"
+  ],
+  "files": [
+    "dist",
+    "package.json",
+    "docs",
+    "README.md"
+  ],
+  "scripts": {
+    "build lib": "vue-cli-service build --target lib --config vue.config.js main.js"
+  },
+  "peerDependencies": {
+    "vue": "2.6.12",
+    "element-ui": "2.15.13"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "4.4.6",
+    "@vue/cli-plugin-eslint": "4.4.6",
+    "@vue/cli-service": "4.4.6",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.15.0",
+    "eslint-plugin-vue": "7.2.0",
+    "vue-template-compiler": "2.6.12",
+    "lodash": "^4.17.21",
+    "sass": "1.32.13",
+    "sass-loader": "10.1.1"
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/back-template.common.js"
+    }
+  }
+}
