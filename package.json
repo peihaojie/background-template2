@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/peihaojie/background-template2.git"
   },
+  "homepage": "https://github.com/peihaojie/background-template2",
   "main": "./dist/back-template.common.js",
   "module": "./dist/back-template.umd.min.js",
   "keywords": [
