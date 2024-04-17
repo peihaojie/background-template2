@@ -25,7 +25,8 @@
     "README.md"
   ],
   "scripts": {
-    "build lib": "vue-cli-service build --target lib --config vue.config.js main.js"
+    "build lib": "vue-cli-service build --target lib --config vue.config.js main.js",
+    "npm update": "npm version patch"
   },
   "peerDependencies": {
     "vue": "2.6.12",
