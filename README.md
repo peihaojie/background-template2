@@ -1,14 +1,15 @@
 <!--
  * @Author: HaoJie
  * @Date: 2024-04-12 17:02:32
- * @LastEditTime: 2024-04-15 14:28:35
+ * @LastEditTime: 2024-04-17 14:21:15
  * @LastEditors: HaoJie
- * @FilePath: \spms-ui\packages\backTemplate\README.md
+ * @FilePath: \backgorund-template2\README.md
 -->
 
 # background-template2
 
 **_组件只能在 ruoyi 后台中使用，因为使用 v-hasPermi 做按钮权限控制_**
+
 **_需要全局挂载 `Element UI` 组件，因为 `form` 组件中会使用_**
 
 由于项目后台页面较多，所以这里对一些常用的组件进行封装，方便使用。
@@ -34,3 +35,6 @@ backTemplate.initBackTemplate(Vue, {
 [表格](./docs/DynamicTable.md)
 [表格操作栏](./docs/OperateButton.md)
 [弹窗](./docs/FormDialog.md)
+
+## 更新日志
+[更新日志](./changeLog.md)

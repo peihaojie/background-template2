@@ -23,6 +23,7 @@
             v-bind="filter.props"
             @change="handleFilterChange(filter, $event)"
             @keyup.enter.native="handleQuery"
+            v-on="filter.eventHandlers"
           >
             <!-- 渲染选项数据 -->
             <template v-if="filter.options && filter.options.length">
@@ -179,10 +180,16 @@ export default {
         this.queryParams[startTimeKey] = startTime;
         this.queryParams[endTimeKey] = endTime;
       }
+      this.emit(filter.prop, "change", value);
       // input 由 enter 键盘事件触发，不由 change 事件触发
       if (filter.type === "elInput") {
         return;
       }
+
+      if (filter.changeSearch === false) {
+        return;
+      }
+
       this.handleQuery();
     },
     initQueryParams() {
@@ -209,6 +216,18 @@ export default {
         default:
           break;
       }
+      // 处理 filter eventHandlers 事件，抛出 emit
+      Object.keys(filter.eventHandlers || {}).forEach((key) => {
+        if (key === "change") {
+          throw new Error("change 事件默认会抛出，请勿入参");
+        }
+        const hasKeys = filter.eventHandlers[key];
+        if (hasKeys) {
+          filter.eventHandlers[key] = (...args) => {
+            this.emit(filter.prop, key, ...args);
+          };
+        }
+      });
       // 默认参数赋值
       this.$set(this.filtersArray, index, merge(defaultParams, filter));
       // v-model 绑定默认数据
@@ -224,6 +243,13 @@ export default {
       );
       this.initItem(filter, index);
     },
+    emit(prop, key, ...args) {
+      const emitName = prop + key.charAt(0).toUpperCase() + key.slice(1);
+      this.$emit(emitName, ...args);
+    },
+    changeProp(prop, val) {
+      this.queryParams[prop] = val;
+    }
   },
 };
 </script>
