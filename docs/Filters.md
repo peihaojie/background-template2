@@ -8,6 +8,7 @@
 | ------------ | --------------------------------------------- | ----------------------------- | ----- | ------ |
 | filtersArray | 筛选器的数据源                                | [FiltersArray](#filtersarray) | true  | -      |
 | showSearch   | 是否显示搜索框(可与 ButtonGroup 中的组件联动) | Boolean                       | false | true   |
+| showReset    | 是否显示重置按钮                              | Boolean                       | false | true   |
 | loadSearch   | 加载完成后触发 search 方法                    | Boolean                       | false | true   |
 
 ### FiltersArray

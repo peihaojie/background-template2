@@ -13,3 +13,8 @@
 - 【filters】 增加 eventHandlers 事件抛出
 - 【filters】 增加 changeProp 支持修改组件双向绑定的数据
 - 【filters】 增加 changeSearch 属性，控制组件搜索的触发
+
+### 【0.0.4】 - 未发布
+
+#### 新增
+- 【filters】 增加 showReset 控制重置按钮显示

@@ -48,7 +48,12 @@
         >
           搜索
         </el-button>
-        <el-button icon="el-icon-refresh" size="mini" @click="resetQuery">
+        <el-button
+          v-if="showReset"
+          icon="el-icon-refresh"
+          size="mini"
+          @click="resetQuery"
+        >
           重置
         </el-button>
       </el-form-item>
@@ -81,6 +86,10 @@ export default {
       required: true,
     },
     showSearch: {
+      type: Boolean,
+      default: true,
+    },
+    showReset: {
       type: Boolean,
       default: true,
     },
@@ -249,7 +258,7 @@ export default {
     },
     changeProp(prop, val) {
       this.queryParams[prop] = val;
-    }
+    },
   },
 };
 </script>
