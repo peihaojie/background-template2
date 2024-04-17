@@ -1,7 +1,7 @@
 {
   "name": "background-template2",
   "author": "haoJie",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "private": false,
   "description": "这是一个后台模板库，导出 mixin 在需要的页面中直接挂载即可",
   "repository": {
@@ -26,7 +26,9 @@
   ],
   "scripts": {
     "build lib": "vue-cli-service build --target lib --config vue.config.js main.js",
-    "npm update": "npm version patch"
+    "npm patch": "npm version patch",
+    "npm minor": "npm version minor",
+    "npm major": "npm version major"
   },
   "peerDependencies": {
     "vue": "2.6.12",
