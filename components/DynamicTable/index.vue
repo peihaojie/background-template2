@@ -29,7 +29,7 @@
 
       <tableColumn
         v-for="(column, index) in columns"
-        :key="index"
+        :key="index * Math.random()"
         :column="column"
       ></tableColumn>
 
@@ -94,6 +94,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    ajaxMethod: {
+      type: String,
+      default: "get",
+    },
   },
   components: { tableColumn },
   data() {
@@ -135,7 +139,8 @@ export default {
         // const response = await request({
         const response = await this.$backTemplateParams.request({
           url: this.url,
-          method: "get",
+          method: this.ajaxMethod,
+          data: params,
           params,
         });
         this.tableData = response.rows;

@@ -14,6 +14,7 @@
 | pageSizes     | 分页大小                       | Array                                       | false | [10, 20, 30, 50] |
 | url           | table 数据请求的接口(get 方法) | String                                      | true  | -                |
 | showOperate   | 是否需要操作列                 | Boolean                                     | false | true             |
+| ajaxMethod    | 接口请求的方式                 | String                                      | false | get              |
 
 **_操作列有专门封装组件，详见：[OperateButton](./OperateButton.md)_**
 

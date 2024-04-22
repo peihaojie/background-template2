@@ -19,3 +19,4 @@
 #### 新增
 - 【filters】 增加 showReset 控制重置按钮显示
 - 【DynamicTable】 增加多级表头渲染，支持无限嵌套
+- 【DynamicTable】 可设置请求方式，避免 TableColumn 缓存

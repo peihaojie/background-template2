@@ -1,7 +1,7 @@
 <!--
  * @Author: HaoJie
  * @Date: 2024-04-22 11:26:42
- * @LastEditTime: 2024-04-22 13:35:18
+ * @LastEditTime: 2024-04-22 15:15:09
  * @LastEditors: HaoJie
  * @FilePath: \backgorund-template2\components\DynamicTable\components\TableColumn\index.vue
 -->
@@ -20,7 +20,7 @@
     <template v-if="column.child && column.child.length">
       <TableColumn
         v-for="(column2, index2) in column.child"
-        :key="index2"
+        :key="index2 * Math.random()"
         :column="column2"
       ></TableColumn>
     </template>
