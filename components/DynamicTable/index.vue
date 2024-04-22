@@ -14,7 +14,13 @@
       @selection-change="handleSelectionChange"
       @row-click="handleRowClick"
     >
-      <el-table-column v-if="showIndex" label="序号" width="60" align="center">
+      <el-table-column
+        v-if="showIndex"
+        label="序号"
+        width="60"
+        align="center"
+        :key="Math.random()"
+      >
         <template slot-scope="{ $index }">
           <span>{{ indexMethod($index) }}</span>
         </template>
@@ -22,6 +28,7 @@
 
       <el-table-column
         v-if="showSelection"
+        :key="Math.random()"
         type="selection"
         align="center"
         width="55"
@@ -29,12 +36,17 @@
 
       <tableColumn
         v-for="(column, index) in columns"
-        :key="index * Math.random()"
+        :key="(index + 1) * Math.random()"
         :column="column"
       ></tableColumn>
 
       <!-- 操作 -->
-      <el-table-column v-if="showOperate" label="操作" width="200">
+      <el-table-column
+        v-if="showOperate"
+        :key="Math.random()"
+        label="操作"
+        width="200"
+      >
         <template v-slot="{ row }">
           <slot name="operate" :row="row"></slot>
         </template>
