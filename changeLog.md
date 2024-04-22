@@ -1,7 +1,7 @@
 <!--
  * @Author: HaoJie
  * @Date: 2024-04-17 14:20:43
- * @LastEditTime: 2024-04-17 14:20:43
+ * @LastEditTime: 2024-04-22 11:26:00
  * @LastEditors: HaoJie
  * @FilePath: \backgorund-template2\changeLog.md
 -->
@@ -18,3 +18,4 @@
 
 #### 新增
 - 【filters】 增加 showReset 控制重置按钮显示
+- 【DynamicTable】 增加多级表头渲染，支持无限嵌套

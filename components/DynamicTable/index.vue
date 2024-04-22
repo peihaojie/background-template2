@@ -27,31 +27,11 @@
         width="55"
       />
 
-      <el-table-column
+      <tableColumn
         v-for="(column, index) in columns"
         :key="index"
-        :prop="column.prop"
-        :label="column.label"
-        :width="column.width"
-        :align="column.align"
-      >
-        <!-- 表头 slot -->
-        <template v-if="column.headerSlot" slot="header">
-          <slot :name="column.headerSlot"></slot>
-        </template>
-        <!-- slot -->
-        <template v-if="column.slot" v-slot="{ row }">
-          <slot :name="column.slot" :row="row"></slot>
-        </template>
-        <!-- select 用来回显的数据 -->
-        <template v-else-if="column.options" v-slot="{ row }">
-          <tooltip :text="getLabel(row[column.prop], column.options)"></tooltip>
-        </template>
-        <!-- 不使用 slot -->
-        <template v-else v-slot="{ row }">
-          <tooltip :text="row[column.prop]"></tooltip>
-        </template>
-      </el-table-column>
+        :column="column"
+      ></tableColumn>
 
       <!-- 操作 -->
       <el-table-column v-if="showOperate" label="操作" width="200">
@@ -77,7 +57,7 @@
 <script>
 // import request from "@/utils/request";
 import { cloneDeep } from "lodash";
-import tooltip from "./components/tooltip.vue";
+import tableColumn from "./components/TableColumn/index.vue";
 
 export default {
   name: "DynamicTable",
@@ -115,7 +95,7 @@ export default {
       default: true,
     },
   },
-  components: { tooltip },
+  components: { tableColumn },
   data() {
     return {
       pageNum: 1,
@@ -166,10 +146,6 @@ export default {
         this.loading = false;
       }
     },
-    getLabel(val, list) {
-      const temp = list.find((item) => item.value == val);
-      return temp ? temp.label : "-";
-    },
     updateColumns(column) {
       const index = this.columns.findIndex((a) => a.prop === column.prop);
       if (index < 0) {
@@ -187,7 +163,7 @@ export default {
     },
     getTable() {
       return this.$refs.table;
-    }
+    },
   },
 };
 </script>

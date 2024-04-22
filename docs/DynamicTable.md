@@ -19,15 +19,16 @@
 
 ### DynamicTableColumns
 
-| 参数       | 说明                                                    | 类型   | 必填  | 默认值 |
-| ---------- | ------------------------------------------------------- | ------ | ----- | ------ |
-| prop       | 列渲染的字段                                            | String | true  | -      |
-| label      | 列的 label                                              | String | true  | -      |
-| width      | 列的宽度                                                | Number | false | -      |
-| align      | 列的对齐方式                                            | String | false | left   |
-| headerSlot | 表头的插槽                                              | String | false | -      |
-| slot       | 插槽的名字                                              | String | false | -      |
-| options    | 用于回显的 list，prop 会对应的 value，将 label 展示出来 | Array  | false | -      |
+| 参数       | 说明                                                      | 类型                                        | 必填  | 默认值 |
+| ---------- | --------------------------------------------------------- | ------------------------------------------- | ----- | ------ |
+| prop       | 列渲染的字段                                              | String                                      | true  | -      |
+| label      | 列的 label                                                | String                                      | true  | -      |
+| width      | 列的宽度                                                  | Number                                      | false | -      |
+| align      | 列的对齐方式                                              | String                                      | false | left   |
+| headerSlot | 表头的插槽                                                | String                                      | false | -      |
+| slot       | 插槽的名字                                                | String                                      | false | -      |
+| options    | 用于回显的 list，prop 会对应的 value，将 label 展示出来   | Array                                       | false | -      |
+| child      | 用于多级表头的显示，数据格式和 columns 相同，支持无限嵌套 | [DynamicTableColumns](#dynamictablecolumns) | false | -      |
 
 ## Events
 
