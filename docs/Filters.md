@@ -31,11 +31,14 @@
 
 ## Methods
 
-| 事件名       | 说明                           | 参数                | 返回值                 |
-| ------------ | ------------------------------ | ------------------- | ---------------------- |
-| getQuery     | 获取参数                       | -                   | filtersArray 中的 prop |
-| updateFilter | 更新 filter，覆盖之前的 prop   | Filters 对象        | -                      |
-| changeProp   | 主动更新 prop 对应组件的 value | prop: string, value | -                      |
+| 事件名        | 说明                           | 参数                         | 返回值                 |
+| ------------- | ------------------------------ | ---------------------------- | ---------------------- |
+| getQuery      | 获取参数                       | -                            | filtersArray 中的 prop |
+| updateFilter  | 更新 filter，覆盖之前的 prop   | Filters 对象                 | -                      |
+| changeProp    | 主动更新 prop 对应组件的 value | prop: string, value          | -                      |
+| changeLoading | 修改搜索按钮 loading 状态      | bool(不传的话反转当前布尔值) | -                      |
+
+**_父组件监听的 search 方法可以改为 async，dynamicTable 组件的 fetchData 方法是一个 Promise，这样可以实现 table loading 时 button 同步 loading 的效果_**
 
 ## Events
 
@@ -86,9 +89,11 @@ export default {
         options,
       });
     },
-    search(params) {
+    async search(params) {
       this.filterParams = params;
+      this.$refs.filters.changeLoading();
       this.$refs.dynamicTable.fetchData(params);
+      this.$refs.filters.changeLoading();
     },
   },
 };

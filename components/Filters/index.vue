@@ -41,6 +41,7 @@
       </template>
       <el-form-item>
         <el-button
+          :loading="loading"
           type="primary"
           icon="el-icon-search"
           size="mini"
@@ -104,6 +105,7 @@ export default {
   data() {
     return {
       queryParams: {},
+      loading: false,
     };
   },
   filters: {
@@ -258,6 +260,13 @@ export default {
     },
     changeProp(prop, val) {
       this.queryParams[prop] = val;
+    },
+    changeLoading(bool) {
+      if (typeof bool === "boolean") {
+        this.loading = bool;
+        return;
+      }
+      this.loading = !this.loading;
     },
   },
 };
