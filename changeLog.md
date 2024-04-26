@@ -1,7 +1,7 @@
 <!--
  * @Author: HaoJie
  * @Date: 2024-04-17 14:20:43
- * @LastEditTime: 2024-04-22 11:26:00
+ * @LastEditTime: 2024-04-26 11:53:32
  * @LastEditors: HaoJie
  * @FilePath: \backgorund-template2\changeLog.md
 -->
@@ -21,3 +21,4 @@
 - 【DynamicTable】 增加多级表头渲染，支持无限嵌套
 - 【DynamicTable】 可设置请求方式，避免 TableColumn 缓存
 - 【filters】 增加搜索按钮 loading 方法
+- 【RightToolbar】 从 ruoyi 抽到 组件库中

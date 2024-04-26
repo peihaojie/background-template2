@@ -1,9 +1,9 @@
 <!--
  * @Author: HaoJie
  * @Date: 2024-03-20 15:19:43
- * @LastEditTime: 2024-03-22 13:51:58
+ * @LastEditTime: 2024-04-26 11:35:33
  * @LastEditors: HaoJie
- * @FilePath: \spms-ui\src\components\ButtonGroup\index.vue
+ * @FilePath: \backgorund-template2\components\ButtonGroup\index.vue
 -->
 <template>
   <el-row :gutter="10" class="mb8">
@@ -36,9 +36,11 @@
 <script>
 import { merge, cloneDeep } from "lodash";
 import * as DEFAULT_PARAMS from "./defaultParams";
+import RightToolbar from "../RightToolbar/index.vue";
 
 export default {
   name: "ButtonGroup",
+  components: { RightToolbar },
   props: {
     buttons: {
       type: Array,
